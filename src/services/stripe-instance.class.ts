@@ -112,6 +112,21 @@ export class StripeInstance implements StripeServiceInterface {
       .first();
   }
 
+  public createPaymentMethod(
+      t: String,
+      a: Element,
+      b?: any
+  ): Observable<SourceResult> {
+    return this.stripe$
+        .asObservable()
+        .filter(stripe => Boolean(stripe))
+        .switchMap(s => {
+          const stripe = s as StripeJS;
+          return Observable.fromPromise(stripe.createPaymentMethod(t, a, b));
+        })
+        .first();
+  }
+
   public retrieveSource(source: SourceParams): Observable<SourceResult> {
     return this.stripe$
       .asObservable()

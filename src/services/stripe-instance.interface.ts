@@ -23,6 +23,11 @@ export interface StripeServiceInterface {
     a: Element | SourceData,
     b?: SourceData | undefined
   ): Observable<SourceResult>;
+  createPaymentMethod(
+      t: String,
+      a: Element,
+      b?: any
+  ): Observable<any>;
   retrieveSource(source: SourceParams): Observable<SourceResult>;
   paymentRequest(options: PaymentRequestOptions): any;
 }

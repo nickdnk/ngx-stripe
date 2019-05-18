@@ -12,6 +12,7 @@ import {
 } from './token';
 import { SourceData, SourceResult, SourceParams } from './sources';
 import { PaymentRequestOptions } from './payment-request';
+import {Observable} from 'rxjs';
 
 export const STRIPE_PUBLISHABLE_KEY = new InjectionToken<string>(
   'Stripe Publishable Key'
@@ -30,6 +31,7 @@ export interface StripeJS {
   createSource(sourceData: SourceData): Promise<SourceResult>;
   retrieveSource(source: SourceParams): Promise<SourceResult>;
   paymentRequest(options: PaymentRequestOptions): any;
+  createPaymentMethod(t: String, a: Element, b?: any): Promise<any>;
 }
 
 export interface Options {
