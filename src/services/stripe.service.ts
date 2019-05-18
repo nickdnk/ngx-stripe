@@ -86,7 +86,7 @@ export class StripeService implements StripeServiceInterface {
       t: String,
       a: Element,
       b?: any
-  ): Observable<TokenResult> {
+  ): Observable<any> {
     return this.stripe.createPaymentMethod(t, a, b);
   }
 
