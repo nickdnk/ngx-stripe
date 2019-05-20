@@ -128,16 +128,15 @@ export class StripeInstance implements StripeServiceInterface {
     }
 
     public handleCardPayment(
-        clientSecret: String,
-        a: Element,
-        b?: any
+        clientSecret: string,
+        data?: any
     ): Observable<any> {
         return this.stripe$
             .asObservable()
             .filter(stripe => Boolean(stripe))
             .switchMap(s => {
                 const stripe = s as StripeJS;
-                return Observable.fromPromise(stripe.handleCardPayment(clientSecret, a, b));
+                return Observable.fromPromise(stripe.handleCardPayment(clientSecret, data));
             })
             .first();
     }

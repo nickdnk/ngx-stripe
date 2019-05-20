@@ -91,11 +91,10 @@ export class StripeService implements StripeServiceInterface {
     }
 
     public handleCardPayment(
-        clientSecret: String,
-        a: Element,
-        b?: any
+        clientSecret: string,
+        paymentMethod: string
     ): Observable<any> {
-        return this.stripe.handleCardPayment(clientSecret, a, b);
+        return this.stripe.handleCardPayment(clientSecret, {payment_method: paymentMethod});
     }
 
     public createSource(

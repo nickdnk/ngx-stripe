@@ -30,5 +30,5 @@ export interface StripeServiceInterface {
   ): Observable<any>;
   retrieveSource(source: SourceParams): Observable<SourceResult>;
   paymentRequest(options: PaymentRequestOptions): any;
-  handleCardPayment(clientSecret: String, a: Element, b?: any): Observable<any>;
+  handleCardPayment(clientSecret: String, data?: any): Observable<any>;
 }
