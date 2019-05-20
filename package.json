@@ -1,7 +1,7 @@
 {
     "name": "ngx-stripe-nyx",
     "private": false,
-    "version": "0.8.1",
+    "version": "0.8.2",
     "description": "Build an Angular library compatible with AoT compilation and Tree shaking like an official package",
     "main": "./bundles/ngx-stripe.umd.js",
     "module": "./esm5/ngx-stripe.js",
